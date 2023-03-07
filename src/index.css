@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;800&display=swap");
+
+@import "./styles/header.css";
+@import "./styles/home.css";
+@import "./styles/card.css";
+@import "./styles/cardDetails.css";
+
+*,
+*::after,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-clr: hsl(207, 26%, 17%);
+  --element-clr: hsl(209, 23%, 22%);
+  --text-clr: hsl(0, 0%, 100%);
+  --font-sm: 14px;
+  --font-md: 16px;
+  --margins: 1rem;
+  --max-width: 1300px;
+  --header-height: 4rem;
+}
+
+:root:has(.light) {
+  --bg-clr: hsl(0, 0%, 98%);
+  --element-clr: hsl(0, 0%, 100%);
+  --text-clr: hsl(200, 15%, 8%);
+}
+
+img,
+a,
+input,
+label,
+button {
+  display: block;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button,
+input,
+select {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: var(--bg-clr);
+  color: var(--text-clr);
+}
+
+.box-shadow {
+  box-shadow: 0 0 7px hsl(0, 0%, 0%, 0.3);
+}

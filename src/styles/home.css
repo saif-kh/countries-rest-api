@@ -1,0 +1,123 @@
+.main-wrapper {
+  max-width: var(--max-width);
+  padding-inline: var(--margins);
+  margin-inline: auto;
+  margin-top: 3rem;
+  --input-height: 3rem;
+}
+
+.inputs-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.basic-input-container {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--text-clr);
+  border: none;
+  background-color: var(--element-clr);
+  border-radius: 8px;
+  height: var(--input-height);
+  padding-inline: 1rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.basic-input-container:focus-within {
+  box-shadow: 0 0 0 1px var(--text-clr);
+}
+
+.basic-input-container:focus-within .options-container {
+  display: flex !important;
+}
+
+.basic-input-container input {
+  outline: none;
+  height: 100%;
+  width: 17rem;
+  padding-left: 0.3rem;
+  color: var(--text-clr);
+  background: none;
+  border: none;
+  font-weight: 600;
+}
+
+.basic-input-container input::placeholder {
+  color: var(--text-clr);
+}
+
+.basic-input-container > div {
+  display: flex;
+}
+
+.select::after {
+  content: "";
+  width: 0.8em;
+  aspect-ratio: 1;
+  background-color: var(--text-clr);
+  clip-path: polygon(50% 83%, 100% 33%, 100% 50%, 50% 100%, 0 50%, 0 33%);
+}
+
+.select span {
+  font-weight: 600;
+  font-size: 1rem;
+  width: 10rem;
+  display: block;
+}
+
+.options-container {
+  background-color: var(--element-clr);
+  position: absolute;
+  flex-direction: column;
+  border-radius: inherit;
+  overflow: hidden;
+  width: 100%;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  display: none !important;
+  z-index: 10;
+}
+
+.options-container > div {
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+}
+
+.options-container > div:hover {
+  background-color: var(--bg-clr);
+  color: var(--text-clr);
+}
+
+.option-selected {
+  background-color: var(--text-clr);
+  color: var(--element-clr);
+}
+
+.cards-container {
+  /* margin-top: 2rem; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-auto-rows: 400px;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+@media (max-width: 947px) {
+  .cards-container {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 639px) {
+  .inputs-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .basic-input-container input {
+    width: 13rem;
+  }
+}
